@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrackerLibrary
+namespace TrackerLibrary.Models
 {
-    public  class PersonModel
+    public class PersonModel
     {
         /// <summary>
         /// Given name of team members.
@@ -24,5 +24,16 @@ namespace TrackerLibrary
         /// Contact information of team members.
         /// </summary>
         public string CellphoneNumber { get; set; }
+        /// <summary>
+        /// Specific Id number of person.
+        /// </summary>
+        public int Id { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return $"{FirstName} {LastName}";
+            }
+        }
     }
 }

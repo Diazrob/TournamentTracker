@@ -1,6 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using TrackerLibrary;
+
 namespace TrackerUI
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
@@ -11,7 +18,11 @@ namespace TrackerUI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new TournamentDashboardForm());
+
+            // Initialize database connections
+            TrackerLibrary.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
+            Application.Run(new CreateTournamentForm());
+            //Application.Run(new TournamentDashboardForm());
         }
     }
 }

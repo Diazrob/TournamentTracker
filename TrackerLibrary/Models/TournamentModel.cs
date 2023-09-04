@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrackerLibrary
+namespace TrackerLibrary.Models
 {
     public class TournamentModel
     {
+        /// <summary>
+        /// The Id number of Tournament.
+        /// </summary>
+        public int Id { get; set; }
         /// <summary>
         /// Specific name of the tournament.
         /// </summary>
